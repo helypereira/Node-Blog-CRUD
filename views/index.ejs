@@ -1,0 +1,24 @@
+<%- include("partials/header.ejs") %>
+<section id="posts">
+    <% if (posts.length === 0) { %>
+        <p>No posts available</p>
+    <% } else { %>
+        <% posts.forEach(entry => { %>
+            <article id="post">
+                <% if (entry.image && entry.image.buffer) { %>
+                    <img src="data:image/png;base64, <%= entry.image.buffer.toString('base64') %>" alt="image-article">
+                <% } else { %>
+                    <p>No image available</p>
+                <% } %>
+                <h2 class="post-title"><%= entry.title %></h2>
+                <p class="post-content"><%= entry.content %></p>
+                <div id="crud">
+                    <a href="/edit/<%= entry.id %>" class="edit-post">Edit</a>
+                    <a href="/delete/<%= entry.id %>" class="delete-post">Delete</a>
+                    <a href="/read/<%= entry.id %>" class="read-more">Read more</a>
+                </div>
+            </article>
+        <% }); %>
+    <% } %>
+</section>  
+<%- include("partials/footer.ejs") %>

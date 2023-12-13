@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") %>
+<section id="post-read">
+    <h2><%= post.title %></h2>
+        <% if (post.image && post.image.buffer) { %>
+            <!-- Si hay una imagen en la entrada, muéstrala -->
+            <img src="data:image/png;base64, <%= post.image.buffer.toString('base64') %>" alt="image-article" class="img-read">
+        <% } else { %>
+            <!-- Si no hay imagen, muestra un mensaje o un marcador de posición -->
+            <p>No image available</p>
+        <% } %>
+
+
+    <p>ID: <%= post.id %></p>
+    <%= post.content %>
+    <br>
+    <br>
+    <div id="crud">
+        <a href="/delete/<%= post.id %>" class="delete-post">Delete</a>
+        <a href="/edit/<%= post.id %>" class="edit-post">Edit</a>
+    </div>
+</section>
+<%- include("partials/footer.ejs") %>
