@@ -1,13 +1,13 @@
 <%- include("partials/header.ejs") %>
-    <section id="post-entry">
-        <h2 class="title-page">Edit your entry</h2>
-        <form action="/edit/<%= post.id %>" method="POST" enctype="multipart/form-data">
-            <label for="title">Post Title*</label>
-            <input type="text" id="title" name="title" value="<%= post.title %>" required><br>
-            <label for="content">Post Content*</label>
-            <textarea id="content" name="content" rows="10" cols="30" required><%= post.content %></textarea>
-            <input type="file" id="post-image" name="post-image" placeholder="select a image file">
-            <input type="submit" value="Update">
-        </form>
-    </section>
+<section id="post-entry">
+    <h2 class="title-page">Edit your entry</h2>
+    <form action="/edit/<%= post._id %>" method="POST" enctype="multipart/form-data">
+        <label for="title">Post Title*</label>
+        <input type="text" id="title" name="title" value="<%= post.title %>" required><br>
+        <label for="content">Post Content*</label>
+        <textarea id="content" name="content" rows="10" cols="30" required><%= post.content %></textarea>
+        <input type="file" id="image" name="image" accept="image/*">
+        <input type="submit" value="Update">
+    </form>
+</section>
 <%- include("partials/footer.ejs") %>

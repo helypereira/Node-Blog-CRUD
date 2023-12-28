@@ -1,6 +1,7 @@
 # Others
 data.js
-
+config.js
+node_modules
 # General
 .DS_Store
 .AppleDouble

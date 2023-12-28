@@ -8,7 +8,22 @@ a {
     text-decoration: none;
     transition: 1s;
     color: #607D8B;
+    width: 25%;
 }
+
+.delete-post {
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 0;
+    font-size: 16px;
+    color: #607D8B;
+}
+
+.delete-post:hover {
+    color: red;
+}
+
 
 a:after{  transform-origin:  0% 50%; }
 a:hover:after { transform: scaleX(1); }
@@ -33,6 +48,10 @@ header {
     align-items: center;
 }
 
+header a {
+    width: auto;
+}
+
 nav {
     display: flex;
     align-items: center;
@@ -41,7 +60,7 @@ nav {
 .logo {
     font-size: 70px;
     font-weight: 700;
-    margin: 20px 0 0 20px;
+    margin: 0 0 0 20px;
 }
 
 .button {
@@ -109,6 +128,7 @@ footer a {
     font-weight: 300;
     font-size: 12px;
     color: black;
+    width: auto;
 }
 
 footer img {
@@ -172,6 +192,11 @@ input[type="submit"]:hover{
 #crud {
     display: flex;
     flex-direction: column;
+}
+
+.date {
+    font-size: 14px;
+    font-weight: 300;
 }
 
 
